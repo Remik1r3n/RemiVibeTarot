@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>塔罗抽牌 · 三张牌</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>塔罗抽牌（3 张）</h1>
+        <div class="actions">
+          <button id="shuffleBtn" class="btn primary" type="button">洗牌</button>
+          <button id="resetBtn" class="btn" type="button" disabled>重置</button>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="panelHead">
+          <div class="meta">
+            <span id="statusText">尚未洗牌</span>
+            <span class="dot">·</span>
+            <span><strong id="drawCount">0</strong>/3</span>
+          </div>
+        </div>
+        <div id="deckGrid" class="deckGrid" aria-label="塔罗牌堆" role="list"></div>
+      </section>
+
+      <section class="panel" id="resultPanel" hidden>
+        <div class="panelHead">
+          <h2>结果</h2>
+          <div class="actions">
+            <button id="copyBtn" class="btn primary" type="button" disabled>复制解读 Prompt</button>
+          </div>
+        </div>
+
+        <div id="resultCards" class="resultCards"></div>
+
+        <textarea id="promptBox" class="promptBox" rows="10" readonly></textarea>
+        <p id="copyStatus" class="copyStatus" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
