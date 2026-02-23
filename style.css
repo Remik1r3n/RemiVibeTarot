@@ -98,6 +98,18 @@ h2 { margin: 0; font-size: 16px; }
   .header { flex-direction: column; align-items: flex-start; }
 }
 
+/* smaller card sizes on narrow/mobile viewports */
+@media (max-width: 480px) {
+  /* tighten the grid so each card can shrink more */
+  .deckGrid {
+    grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+    gap: 6px;
+  }
+
+  /* optionally reduce padding inside result cards if needed */
+  .resultCards { gap: 6px; }
+}
+
 .card {
   position: relative;
   width: 100%;
@@ -196,6 +208,37 @@ h2 { margin: 0; font-size: 16px; }
   color: var(--text);
   resize: vertical;
   line-height: 1.45;
+}
+
+/* anchor/link aesthetics */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--primaryHover);
+}
+
+a:hover::after,
+a:focus::after {
+  transform: scaleX(1);
 }
 
 /* footer styling */
