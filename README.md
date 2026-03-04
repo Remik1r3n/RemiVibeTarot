@@ -1,5 +1,7 @@
 # RemiVibeTarot
 
+Demo: https://service.remiki.ren/RemiVibeTarot
+
 ## 概述
 纯前端的塔罗牌洗牌工具。每次洗牌会随机选出 3 张牌，并生成一个包含牌面信息的 prompt，方便用户将其输入到其他 AI 模型中进行解读。
 
