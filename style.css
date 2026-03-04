@@ -61,11 +61,18 @@ h1 { margin: 0; font-size: 18px; letter-spacing: 0.3px; }
 .btn.primary:hover { background: var(--primaryHover); }
 
 .panel {
-  margin-top: 14px;
-  padding: 14px;
+  margin-top: 16px;
+  padding: 0;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.panel:hover {
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .panelHead {
@@ -73,9 +80,39 @@ h1 { margin: 0; font-size: 18px; letter-spacing: 0.3px; }
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(8px);
 }
 
-h2 { margin: 0; font-size: 16px; }
+.panel > .deckGrid,
+.panel > .resultCards {
+  margin: 16px;
+}
+
+.panel > .promptBox {
+  margin: 0 16px;
+  width: calc(100% - 32px);
+}
+
+.panel > p {
+  margin: 16px 16px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.panel > .actions {
+  margin: 12px 16px 0;
+  padding: 0;
+}
+
+.panel > .copyStatus {
+  margin: 10px 16px 16px;
+  min-height: 0;
+}
+
+h2 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.2px; }
 
 .meta {
   color: var(--muted);
@@ -88,7 +125,6 @@ h2 { margin: 0; font-size: 16px; }
 .dot { opacity: 0.6; }
 
 .deckGrid {
-  margin-top: 12px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
   gap: 10px;
@@ -152,7 +188,6 @@ h2 { margin: 0; font-size: 16px; }
 }
 
 .resultCards {
-  margin-top: 12px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
@@ -163,10 +198,16 @@ h2 { margin: 0; font-size: 16px; }
 }
 
 .resultCard {
-  padding: 12px;
+  padding: 14px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: rgba(0,0,0,0.18);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(14, 165, 233, 0.04) 100%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resultCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
 }
 
 .resultCard .n {
@@ -199,18 +240,16 @@ h2 { margin: 0; font-size: 16px; }
 }
 
 .promptBox {
-  width: 100%;
-  margin-top: 6px;
-  padding: 10px 12px;
+  padding: 5px 12px;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: rgba(0,0,0,0.20);
   color: var(--text);
   resize: vertical;
   line-height: 1.45;
+  box-sizing: border-box;
 }
 
-/* anchor/link aesthetics */
 a {
   color: var(--primary);
   text-decoration: none;
@@ -254,9 +293,7 @@ a:focus::after {
 }
 
 .copyStatus {
-  margin: 8px 2px 0;
   color: var(--muted);
   font-size: 12px;
-  min-height: 18px;
 }
 

@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>塔罗抽牌 · 三张牌</title>
+    <title>RemiVibeTarot 抽牌页</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="app">
       <header class="header">
-        <h1>塔罗抽牌（3 张）</h1>
+        <h1>RemiVibeTarot 抽牌页</h1>
         <div class="actions">
           <button id="shuffleBtn" class="btn primary" type="button">洗牌</button>
           <button id="resetBtn" class="btn" type="button" disabled>重置</button>
@@ -30,22 +30,22 @@
       <section class="panel" id="resultPanel" hidden>
         <div class="panelHead">
           <h2>结果</h2>
-          <div class="actions">
-            <button id="copyBtn" class="btn primary" type="button" disabled>复制解读 Prompt</button>
-          </div>
         </div>
 
         <div id="resultCards" class="resultCards"></div>
-
         <textarea id="promptBox" class="promptBox" rows="10" readonly></textarea>
+        <p id="copyInstructions">将以上文本复制并发送给任意 AI 助手，即可让其为你解读。</p>
+        <div class="actions">
+          <button id="copyBtn" class="btn primary" type="button" disabled>复制</button>
+        </div>
         <p id="copyStatus" class="copyStatus" aria-live="polite"></p>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Made by Remi & GPT-5.1 2026. No rights reserved.</p>
       <p><a href="https://github.com/Remik1r3n/RemiVibeTarot" target="_blank" rel="noopener">GitHub 项目地址</a></p>
-      <p>您的数据仅会在本地处理（纯前端），不会以任何方式被存储</p>
+      <p>Made by Remi & GPT-5.1 2026. No rights reserved.</p>
+      <p>您的数据仅会在本地处理，不会以任何方式被上传或存储</p>
       <p>本项目仅供娱乐</p>
     </footer>
     <script src="./app.js" defer></script>
