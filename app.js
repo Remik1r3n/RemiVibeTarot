@@ -1,8 +1,3 @@
-/* Pure frontend tarot draw (3 cards)
-   - Shuffle fixes the mapping: each grid position -> a specific card
-   - User clicks 3 cards from the shown pile
-*/
-
 'use strict';
 
 const shuffleBtn = document.getElementById('shuffleBtn');
@@ -30,16 +25,16 @@ function createRiderWaiteDeck() {
     ['5', '教皇', 'The Hierophant'],
     ['6', '恋人', 'The Lovers'],
     ['7', '战车', 'The Chariot'],
-    ['8', '力量', 'Strength'],
+    ['8', '正义', 'Justice'],
     ['9', '隐者', 'The Hermit'],
     ['10', '命运之轮', 'Wheel of Fortune'],
-    ['11', '正义', 'Justice'],
-    ['12', '倒吊人', 'The Hanged Man'],
+    ['11', '力量', 'Strength'],
+    ['12', '倒悬者', 'The Hanged Man'],
     ['13', '死神', 'Death'],
     ['14', '节制', 'Temperance'],
     ['15', '恶魔', 'The Devil'],
-    ['16', '高塔', 'The Tower'],
-    ['17', '星星', 'The Star'],
+    ['16', '塔', 'The Tower'],
+    ['17', '星', 'The Star'],
     ['18', '月亮', 'The Moon'],
     ['19', '太阳', 'The Sun'],
     ['20', '审判', 'Judgement'],
@@ -240,7 +235,7 @@ function shuffleAndStart() {
   pickedIndexes = [];
 
   setStartedState();
-  setStatus('已洗牌：抽三张（含正/逆位）');
+  setStatus('已洗牌：');
   updateCounts();
   renderDeckGrid();
   renderResults();
